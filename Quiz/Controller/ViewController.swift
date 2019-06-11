@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var username: UILabel!
     
+    @IBOutlet weak var levelLabel: UILabel!
     
     @IBOutlet weak var mistakesLabel: UILabel!
     // Outlet for Buttons

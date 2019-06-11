@@ -10,10 +10,12 @@ import Foundation
 class Player {
     var username: String = ""
     var score: Int = 0
+    var level: String = ""
     
-    init( score: Int,username: String){
+    init( score: Int,username: String,level: String){
         
         self.score = score
         self.username = username
+        self.level = level
     }
 }
