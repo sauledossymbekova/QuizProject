@@ -360,6 +360,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="levelLabel" destination="Odt-JG-ocg" id="aRy-yp-CAV"/>
                                             <outlet property="scoreLabel" destination="8pt-tX-ihf" id="O9x-YQ-7j1"/>
                                             <outlet property="usernameLabel" destination="RHu-Kp-qp6" id="PlZ-ef-qzh"/>
                                         </connections>

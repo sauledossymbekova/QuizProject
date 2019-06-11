@@ -14,6 +14,7 @@ class ScoreBoardViewCell: UITableViewCell {
     
     @IBOutlet weak var scoreLabel: UILabel!
     
+    @IBOutlet weak var levelLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,11 +28,12 @@ class ScoreBoardViewCell: UITableViewCell {
     }
     
     
-    func setScoreBoardCell(username: Player, score: Player){
+    func setScoreBoardCell(username: Player, score: Player, level: Player){
         
         scoreLabel.text = String(score.score)
         
         usernameLabel.text = username.username
-
+        
+        levelLabel.text = level.level
 }
 }

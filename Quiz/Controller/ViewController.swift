@@ -106,17 +106,41 @@ class ViewController: UIViewController {
     }
         func updateQuestion(){
             
-            
-            if questionNumber <= allQuestions.list.count-1 {
-            
-                flagView.image = UIImage(named :(allQuestions.list[questionNumber].questionImage))
-                questionLabel.text = allQuestions.list[questionNumber].question
-                optionA.setTitle(allQuestions.list[questionNumber].optionA, for: UIControl.State.normal) // uicontrolstate
-                optionB.setTitle(allQuestions.list[questionNumber].optionB, for: UIControl.State.normal)
-                optionC.setTitle(allQuestions.list[questionNumber].optionC, for: UIControl.State.normal)
-                optionD.setTitle(allQuestions.list[questionNumber].optionD, for: UIControl.State.normal)
-                selectedAnswer = allQuestions.list[questionNumber].correctAnswer
-                //questionNumber += 1
+            if FrontViewController.level == "Level1" && questionNumber <= allQuestions.listlevel1.count - 1
+            {
+                
+                flagView.image = UIImage(named:(allQuestions.listlevel1[questionNumber].questionImage))
+                questionLabel.text=allQuestions.listlevel1[questionNumber].question
+                optionA.setTitle(allQuestions.listlevel1[questionNumber].optionA, for:UIControl.State.normal)
+                optionB.setTitle(allQuestions.listlevel1[questionNumber].optionB, for:UIControl.State.normal)
+                optionC.setTitle(allQuestions.listlevel1[questionNumber].optionC, for:UIControl.State.normal)
+                optionD.setTitle(allQuestions.listlevel1[questionNumber].optionD, for:UIControl.State.normal)
+                selectedAnswer = allQuestions.listlevel1[questionNumber].correctAnswer
+            }
+                
+                
+                
+            else if FrontViewController.level == "Level2" && questionNumber <= allQuestions.listlevel2.count - 1
+            {
+                
+                flagView.image = UIImage(named:(allQuestions.listlevel2[questionNumber].questionImage))
+                questionLabel.text=allQuestions.listlevel2[questionNumber].question
+                optionA.setTitle(allQuestions.listlevel2[questionNumber].optionA, for:UIControl.State.normal)
+                optionB.setTitle(allQuestions.listlevel2[questionNumber].optionB, for:UIControl.State.normal)
+                optionC.setTitle(allQuestions.listlevel2[questionNumber].optionC, for:UIControl.State.normal)
+                optionD.setTitle(allQuestions.listlevel2[questionNumber].optionD, for:UIControl.State.normal)
+                selectedAnswer = allQuestions.listlevel2[questionNumber].correctAnswer
+            }
+            else if FrontViewController.level == "Level3" && questionNumber <= allQuestions.listlevel3.count - 1
+            {
+                
+                flagView.image = UIImage(named:(allQuestions.listlevel3[questionNumber].questionImage))
+                questionLabel.text=allQuestions.listlevel3[questionNumber].question
+                optionA.setTitle(allQuestions.listlevel3[questionNumber].optionA, for:UIControl.State.normal)
+                optionB.setTitle(allQuestions.listlevel3[questionNumber].optionB, for:UIControl.State.normal)
+                optionC.setTitle(allQuestions.listlevel3[questionNumber].optionC, for:UIControl.State.normal)
+                optionD.setTitle(allQuestions.listlevel3[questionNumber].optionD, for:UIControl.State.normal)
+                selectedAnswer = allQuestions.listlevel3[questionNumber].correctAnswer
             }
             else{
                 let controller = self.storyboard?.instantiateViewController(withIdentifier: "scoreBoardViewController") as! ScoreBoardViewController
@@ -125,11 +149,26 @@ class ViewController: UIViewController {
             updateUI()
             }
         func updateUI(){
+             levelLabel.text = "\(FrontViewController.level)"
             scoreLabel.text = "Score: \(score)"
             username.text="\(FrontViewController.str )"
             mistakesLabel.text = "Mistakes: \(mistakes)"
-            questionCounter.text = "\(questionNumber+1)/\(allQuestions.list.count)"
-            progressView.frame.size.width = (view.frame.size.width / CGFloat(allQuestions.list.count)) * CGFloat(questionNumber + 1)
+            //questionCounter.text = "\(questionNumber+1)/\(allQuestions.list.count)"
+        //   progressView.frame.size.width = (view.frame.size.width / CGFloat(allQuestions.list.count)) * CGFloat(questionNumber + 1)
+            
+            if FrontViewController.level == "Level1"{
+                
+                questionCounter.text = "\(questionNumber + 1)/\(allQuestions.listlevel1.count)"
+                 progressView.frame.size.width = (view.frame.size.width / CGFloat(allQuestions.listlevel1.count)) * CGFloat(questionNumber + 1)
+            }
+            if FrontViewController.level == "Level2"{
+                 progressView.frame.size.width = (view.frame.size.width / CGFloat(allQuestions.listlevel2.count)) * CGFloat(questionNumber + 1)
+                questionCounter.text = "\(questionNumber + 1)/\(allQuestions.listlevel2.count)"
+            }
+            if FrontViewController.level == "Level3"{
+                 progressView.frame.size.width = (view.frame.size.width / CGFloat(allQuestions.listlevel3.count)) * CGFloat(questionNumber + 1)
+                questionCounter.text = "\(questionNumber + 1)/\(allQuestions.listlevel3.count)"
+            }
             
               ViewController.lastscore = score
             }

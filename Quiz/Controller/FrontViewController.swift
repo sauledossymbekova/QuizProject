@@ -72,8 +72,9 @@ class FrontViewController: UIViewController {
     @IBAction func buttonpressed(_ sender: Any) {
         
 
-   FrontViewController.str = username.text!;
+
           if  username.text != "" && FrontViewController.level != ""{
+               FrontViewController.str = username.text!;
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
             self.present(controller, animated: true)
         }

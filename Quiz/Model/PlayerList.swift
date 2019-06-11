@@ -15,7 +15,7 @@ class PlayerList{
     
     init(){
         
-        table.append(Player(score: ViewController.lastscore,username: "\(FrontViewController.str)"))
+        table.append(Player(score: ViewController.lastscore,username: "\(FrontViewController.str)", level: FrontViewController.level))
         
     }
 }

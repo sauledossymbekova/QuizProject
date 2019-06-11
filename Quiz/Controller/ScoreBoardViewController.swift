@@ -30,7 +30,7 @@ class ScoreBoardViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let play = source.table[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "scoreBoardCell", for: indexPath) as! ScoreBoardViewCell
-        cell.setScoreBoardCell(username: play, score: play)
+        cell.setScoreBoardCell(username: play, score: play ,level: play)
         return cell
     }
     
